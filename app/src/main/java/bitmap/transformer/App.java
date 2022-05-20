@@ -3,6 +3,7 @@
  */
 package bitmap.transformer;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,26 +18,31 @@ public class App {
 //The CLI should require at least three arguments: input-file-path output-file-path transform-name.
 //The CLI should support a minimum of three transforms, each of which is an instance method in the Bitmap class.
     public static void main (String[] args) {
-        getFileBytes();
+       Bitmap baldy = new Bitmap("app/src/main/resources/baldy-8bit.bmp","app/src/main/resources/newbaldy-8bit.bmp" );
 
     }
-    public static byte[] getFileBytes(){
-        Path pathToFile = Paths.get("baldy-8bit.bmp");
-        byte[] fileContent;
-        try{
-            fileContent = Files.readAllBytes(pathToFile.toAbsolutePath());
-            System.out.println(Arrays.toString(fileContent));
-//            for(byte img : fileContent){
-//                System.out.println(img);
-//            }
-
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            return null;
-        }
-    return fileContent;
-
-    }
-//    string imagePath = "app/src/main/java/resources/baldy-8bit.bmp";
-
+//    public void transformone(BufferedImage img0, String OutPutPath){
+//        BufferedImage = img0;
+//        int width = img0.getWidth();
+//        int height = img0.getHeight();
+//
+//    }
 }
+//    public static byte[] getFileBytes(){
+//        Path pathToFile = Paths.get("baldy-8bit.bmp");
+//        byte[] fileContent;
+//        try{
+//            fileContent = Files.readAllBytes(pathToFile.toAbsolutePath());
+//            System.out.println(Arrays.toString(fileContent));
+////            for(byte img : fileContent){
+////                System.out.println(img);
+////            }
+//
+//        } catch (IOException ioe) {
+//            ioe.printStackTrace();
+//            return null;
+//        }
+//    return fileContent;
+//
+//    }
+//    string imagePath = "app/src/main/java/resources/baldy-8bit.bmp";
